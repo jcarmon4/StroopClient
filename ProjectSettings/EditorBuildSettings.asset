@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: d12c800ec8f9ce840b9e60d674127388
+  - enabled: 1
+    path: Assets/Scenes/IncoherentScene.unity
+    guid: d48ef1d432c69174fb222d68d97979ad
   m_configObjects: {}
