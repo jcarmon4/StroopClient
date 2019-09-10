@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StopcountTimer : MonoBehaviour
 {
     public Text CountdownText;
+    public string NextScene;
 
     float CurrentTime = 0f;
     float StartingTime = 120f;
@@ -27,6 +29,7 @@ public class StopcountTimer : MonoBehaviour
 
         if (CurrentTime <= 0){ 
             CurrentTime = 0;
+            SceneManager.LoadScene(NextScene);
         }
     }
 }
