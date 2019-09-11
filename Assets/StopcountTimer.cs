@@ -16,21 +16,21 @@ public class StopcountTimer : MonoBehaviour
     float CurrentTime = 0f;
     float StartingTime = 120f;
 
+    int stageScene = 1;
+
     // Start is called before the first frame update
     void Start()
     {
         CurrentTime = StartingTime;
-        (Color, string) ColorSelected = RandomColor();
-        ColorText.color = ColorSelected.Item1;
-
+                
         Scene CurrentScene = SceneManager.GetActiveScene();
         string sceneName = CurrentScene.name;
         // Verifica la escena actual para modificar a un comportamiento coherente o incoherente.
-        if (sceneName == "SampleScene"){
-            ColorText.text = ColorSelected.Item2;
-        } else if (sceneName == "IncoherentScene"){
-            ColorText.text = RandomColor().Item2;
+        if (sceneName == "IncoherentScene"){
+            stageScene = 2;
         }
+
+        UpdateColorText();
     }
 
     // Update is called once per frame
@@ -45,6 +45,15 @@ public class StopcountTimer : MonoBehaviour
             CurrentTime = 0;
             SceneManager.LoadScene(NextScene);
         }
+    }
+
+    public void UpdateColorText(){
+        (Color, string) ColorSelected = RandomColor();
+        ColorText.color = ColorSelected.Item1;
+        ColorText.text = ColorSelected.Item2;
+        if (stageScene == 2){
+            ColorText.text = RandomColor().Item2;  
+        } 
     }
 
     private (Color, string) RandomColor(){
