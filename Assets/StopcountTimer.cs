@@ -9,6 +9,9 @@ public class StopcountTimer : MonoBehaviour
 {
     public Text CountdownText;
     public string NextScene;
+    public Text ColorText;
+
+    private (Color, string)[] Colors = {(Color.green, "verde"), (Color.red, "rojo"), (Color.blue, "azul")};
 
     float CurrentTime = 0f;
     float StartingTime = 120f;
@@ -17,6 +20,9 @@ public class StopcountTimer : MonoBehaviour
     void Start()
     {
         CurrentTime = StartingTime;
+        (Color, string) ColorSelected = RandomColor();
+        ColorText.color = ColorSelected.Item1;
+        ColorText.text = ColorSelected.Item2;
     }
 
     // Update is called once per frame
@@ -32,4 +38,8 @@ public class StopcountTimer : MonoBehaviour
             SceneManager.LoadScene(NextScene);
         }
     }
+
+    private (Color, string) RandomColor(){
+        return Colors[UnityEngine.Random.Range(0, Colors.Length)];
+    } 
 }

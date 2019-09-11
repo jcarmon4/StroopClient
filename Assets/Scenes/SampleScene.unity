@@ -796,6 +796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CountdownText: {fileID: 1323872535}
   NextScene: IncoherentScene
+  ColorText: {fileID: 2122206639}
 --- !u!114 &1323872535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1196,7 +1197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a23fdac3c249b0d49924443d72856763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: IncoherentScene
 --- !u!1 &2122206637
 GameObject:
   m_ObjectHideFlags: 0
