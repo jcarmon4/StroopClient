@@ -22,7 +22,15 @@ public class StopcountTimer : MonoBehaviour
         CurrentTime = StartingTime;
         (Color, string) ColorSelected = RandomColor();
         ColorText.color = ColorSelected.Item1;
-        ColorText.text = ColorSelected.Item2;
+
+        Scene CurrentScene = SceneManager.GetActiveScene();
+        string sceneName = CurrentScene.name;
+        // Verifica la escena actual para modificar a un comportamiento coherente o incoherente.
+        if (sceneName == "SampleScene"){
+            ColorText.text = ColorSelected.Item2;
+        } else if (sceneName == "IncoherentScene"){
+            ColorText.text = RandomColor().Item2;
+        }
     }
 
     // Update is called once per frame
