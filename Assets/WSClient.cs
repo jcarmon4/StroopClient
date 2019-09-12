@@ -8,33 +8,71 @@ public class WSClient : MonoBehaviour
 {
     public Text message;
 
+    private string url = "https://stroopapi.azurewebsites.net/api/RecordActivity";
+
     // Start is called before the first frame update
-    void Start()
-    {
-        StartCoroutine(Upload());
+    // void Start()
+    // {
+    //     StartCoroutine(Upload());
+    // }
+
+    // // Update is called once per frame
+    // IEnumerator Upload()
+    // {
+    //     string url = "https://strooptest4.azurewebsites.net/api/values";
+
+    //     WWWForm formData = new WWWForm();
+    //     formData.AddField("", "");
+    //     formData.AddField("", "");
+
+    //     using (UnityWebRequest www = UnityWebRequest.Post(url, formData))
+    //     {
+    //         yield return www.SendWebRequest();
+
+    //         if (www.isNetworkError || www.isHttpError)
+    //         {
+    //             Debug.Log(www.error);
+    //         }
+    //         else
+    //         {
+    //             //message.text = www.text;
+    //             Debug.Log("Form upload complete!");
+    //         }
+    //     }
+    // }
+
+    public void CallPostResquest(RecordActivity recordActivity){
+        StartCoroutine(PostRequest(recordActivity));
     }
 
-    // Update is called once per frame
-    IEnumerator Upload()
+    IEnumerator PostRequest(RecordActivity recordActivity)
     {
-        string url = "https://strooptest4.azurewebsites.net/api/values";
+        // RecordActivity recordActivity = new RecordActivity();
+        // recordActivity.IdUser = 1;
+        // recordActivity.Stage = "1";
+        // recordActivity.Status = "Ok";
+        // recordActivity.Text = "Rojo";
+        // recordActivity.Ink = "Rojo";
+        string jsonData = JsonUtility.ToJson(recordActivity);
+        //jsonData = "{\"idUser\": 1,\"stage\": \"1\",\"status\": \"Fail\",\"text\": \"Azul\",\"ink\": \"Verde\"}";
+        Debug.Log("jsonData: " + jsonData);
 
-        WWWForm formData = new WWWForm();
-        formData.AddField("", "");
-        formData.AddField("", "");
-
-        using (UnityWebRequest www = UnityWebRequest.Post(url, formData))
+        using (UnityWebRequest request = UnityWebRequest.Put(url, jsonData))
         {
-            yield return www.SendWebRequest();
+            request.method = UnityWebRequest.kHttpVerbPOST;
+            request.SetRequestHeader("Content-Type", "application/json");
+            request.SetRequestHeader("Accept", "application/json");
+            yield return request.SendWebRequest();
 
-            if (www.isNetworkError || www.isHttpError)
+            if (request.isNetworkError || request.isHttpError)
             {
-                Debug.Log(www.error);
+                message.text = request.downloadHandler.text;
+                Debug.Log(request.error);
             }
             else
             {
-                //message.text = www.text;
-                Debug.Log("Form upload complete!");
+                message.text = request.downloadHandler.text;
+                Debug.Log("OK POST");
             }
         }
     }
