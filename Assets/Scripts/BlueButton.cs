@@ -19,6 +19,7 @@ public class BlueButton : MonoBehaviour
     }
 
     public void OnClick(){
+        Controller.CheckPoint("azul");
         Controller.UpdateColorText();
     }
 }

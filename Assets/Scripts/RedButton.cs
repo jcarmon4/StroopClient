@@ -19,6 +19,7 @@ public class RedButton : MonoBehaviour
     }
 
     public void OnClick(){
+        Controller.CheckPoint("rojo");
         Controller.UpdateColorText();
     }
 }

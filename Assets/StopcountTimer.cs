@@ -10,6 +10,11 @@ public class StopcountTimer : MonoBehaviour
     public Text CountdownText;
     public string NextScene;
     public Text ColorText;
+    public Text PlusPointText;
+    public Text LosePointText;
+
+    private int PlusPoint;
+    private int LosePoint;
 
     private (Color, string)[] Colors = {(Color.green, "verde"), (Color.red, "rojo"), (Color.blue, "azul")};
 
@@ -17,6 +22,8 @@ public class StopcountTimer : MonoBehaviour
     float StartingTime = 120f;
 
     int stageScene = 1;
+
+    private (Color, string) RandomColor;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +36,9 @@ public class StopcountTimer : MonoBehaviour
         if (sceneName == "IncoherentScene"){
             stageScene = 2;
         }
+
+        PlusPointText.text = "" + PlusPoint;
+        LosePointText.text = "" + LosePoint;
 
         UpdateColorText();
     }
@@ -47,16 +57,27 @@ public class StopcountTimer : MonoBehaviour
         }
     }
 
+    public void CheckPoint(string ColorSelected){
+        if (ColorSelected == RandomColor.Item2){
+            PlusPoint++;
+            PlusPointText.text = "" + PlusPoint;
+
+        } else {
+            LosePoint++;
+            LosePointText.text = "" + LosePoint;
+        }
+    }
+
     public void UpdateColorText(){
-        (Color, string) ColorSelected = RandomColor();
-        ColorText.color = ColorSelected.Item1;
-        ColorText.text = ColorSelected.Item2;
+        RandomColor = ShuffleColor();
+        ColorText.color = RandomColor.Item1;
+        ColorText.text = RandomColor.Item2;
         if (stageScene == 2){
-            ColorText.text = RandomColor().Item2;  
+            ColorText.text = ShuffleColor().Item2;  
         } 
     }
 
-    private (Color, string) RandomColor(){
+    private (Color, string) ShuffleColor(){
         return Colors[UnityEngine.Random.Range(0, Colors.Length)];
     } 
 }

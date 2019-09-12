@@ -19,6 +19,7 @@ public class GreenButton : MonoBehaviour
     }
 
     public void OnClick(){
+        Controller.CheckPoint("verde");
         Controller.UpdateColorText();
     }
 }
