@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 708143830}
   - component: {fileID: 708143829}
   m_Layer: 5
-  m_Name: Title
+  m_Name: CoherentTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

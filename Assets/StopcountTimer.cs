@@ -59,6 +59,13 @@ public class StopcountTimer : MonoBehaviour
 
         if (CurrentTime <= 0){ 
             CurrentTime = 0;
+            if (stageScene == 1){
+                PlayerPrefs.SetInt("PlusPoint1", PlusPoint);
+                PlayerPrefs.SetInt("LosePoint1", LosePoint);
+            } else {
+                PlayerPrefs.SetInt("PlusPoint2", PlusPoint);
+                PlayerPrefs.SetInt("LosePoint2", LosePoint);
+            }
             SceneManager.LoadScene(NextScene);
         }
     }

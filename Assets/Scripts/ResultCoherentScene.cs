@@ -18,6 +18,10 @@ public class ResultCoherentScene : MonoBehaviour
     void Start()
     {
         CurrentTime = StartingTime;
+        int PlusPoint1 = PlayerPrefs.GetInt("PlusPoint1");
+        int LosePoint1 = PlayerPrefs.GetInt("LosePoint1");
+        PlusPointText.text = "" + PlusPoint1;
+        LosePointText.text = "" + LosePoint1;
     }
 
     // Update is called once per frame
