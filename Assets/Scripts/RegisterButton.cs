@@ -28,11 +28,11 @@ public class RegisterButton : MonoBehaviour
 
     public void OnClick(){
         User user = new User();
-        user.fullname = FullName.text;
+        user.fullName = FullName.text;
         user.email = Email.text;
         user.gender = Gender.options[Gender.value].text;
         user.age = Age.text;
-        Debug.Log(user.fullname + "" + user.email + "" + user.gender + "" + user.age);
+        Debug.Log(user.fullName + "" + user.email + "" + user.gender + "" + user.age);
         CreateUser(user);
     }
 
@@ -60,7 +60,12 @@ public class RegisterButton : MonoBehaviour
             {
                 Message.text = "Usuario registrado";
                 Debug.Log("Usuario registrado");
-                Debug.Log(request.downloadHandler.text);
+                string response = request.downloadHandler.text;
+                Debug.Log(response);
+                User User = JsonUtility.FromJson<User>(response);
+                Debug.Log(User.id + " "+ User.fullName + " "+ User.email + " "+ User.age);
+                PlayerPrefs.SetString("IdUser", "" + User.id);
+                PlayerPrefs.SetString("fullName", User.fullName);
                 SceneManager.LoadScene(NextScene);
             }
         }

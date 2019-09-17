@@ -72,8 +72,8 @@ public class StopcountTimer : MonoBehaviour
 
     public void CheckPoint(string ColorSelected){
         RecordActivity recordActivity = new RecordActivity();
-        // TODO: Remplazar por el user correcto.
-        recordActivity.IdUser = 1;
+        string IdUserString = PlayerPrefs.GetString("IdUser"); 
+        recordActivity.IdUser = long.Parse(IdUserString);
         recordActivity.Stage = "" + stageScene;
 
         if (ColorSelected == RandomColor.Item2){

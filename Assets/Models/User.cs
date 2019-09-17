@@ -4,8 +4,8 @@ namespace StroopTest.Models
 {
     [Serializable]
     public class User {
-        public long Id;
-        public string fullname;
+        public long id;
+        public string fullName;
         public string email;
         public string gender;
         public string age;
