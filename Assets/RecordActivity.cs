@@ -9,5 +9,6 @@ public class RecordActivity
     public string Status;
     public string Text;
     public string Ink;
+    public string Selected;
     public string Time;
 }

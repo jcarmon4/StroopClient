@@ -87,6 +87,7 @@ public class StopcountTimer : MonoBehaviour
         }
         recordActivity.Text = RandomText.Item2;
         recordActivity.Ink = RandomColor.Item2;
+        recordActivity.Selected = ColorSelected;
 
         CallPostResquest(recordActivity);
     }
