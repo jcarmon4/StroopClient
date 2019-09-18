@@ -13,6 +13,9 @@ public class StopcountTimer : MonoBehaviour
     public Text ColorText;
     public Text PlusPointText;
     public Text LosePointText;
+    public Slider Slider;
+    private float TimeRemaining;
+    private const float TimerMax = 3f;
 
     public Text Message;
 
@@ -46,6 +49,8 @@ public class StopcountTimer : MonoBehaviour
         PlusPointText.text = "" + PlusPoint;
         LosePointText.text = "" + LosePoint;
 
+        TimeRemaining = TimerMax;
+
         UpdateColorText();
     }
 
@@ -68,9 +73,21 @@ public class StopcountTimer : MonoBehaviour
             }
             SceneManager.LoadScene(NextScene);
         }
+
+        Slider.value = CalculateSliderValue();
+
+        if (TimeRemaining > 0){
+            TimeRemaining -= Time.deltaTime;
+        } else {
+            CheckPoint("None");
+            UpdateColorText();
+        }
     }
 
     public void CheckPoint(string ColorSelected){
+        // Reset el tiempo por actividad
+        TimeRemaining = TimerMax;
+
         RecordActivity recordActivity = new RecordActivity();
         string IdUserString = PlayerPrefs.GetString("IdUser"); 
         recordActivity.IdUser = long.Parse(IdUserString);
@@ -106,6 +123,10 @@ public class StopcountTimer : MonoBehaviour
     private (Color, string) ShuffleColor(){
         return Colors[UnityEngine.Random.Range(0, Colors.Length)];
     } 
+
+    private float CalculateSliderValue(){
+        return TimeRemaining / TimerMax;
+    }
 
     public void CallPostResquest(RecordActivity recordActivity){
         StartCoroutine(PostRequest(recordActivity));
