@@ -22,7 +22,8 @@ public class StopcountTimer : MonoBehaviour
     private int PlusPoint;
     private int LosePoint;
 
-    private (Color, string)[] Colors = {(Color.green, "verde"), (Color.red, "rojo"), (Color.blue, "azul")};
+    private (Color, string)[] Colors = {(Color.green, "verde"), (Color.red, "rojo"), (Color.blue, "azul"),
+    (Color.black, "negro"), (Color.magenta, "fucsia"), (Color.yellow, "amarillo")};
 
     float CurrentTime = 0f;
     float StartingTime = 120f;
