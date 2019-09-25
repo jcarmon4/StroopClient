@@ -13,6 +13,8 @@ public class StopcountTimer : MonoBehaviour
     public Text ColorText;
     public Text PlusPointText;
     public Text LosePointText;
+    public GameObject LabelContainer;
+    public Text WinFailText;
     public Slider Slider;
     private float TimeRemaining;
     private const float TimerMax = 3f;
@@ -46,6 +48,7 @@ public class StopcountTimer : MonoBehaviour
         if (sceneName == "IncoherentScene"){
             stageScene = 2;
         }
+        LabelContainer.SetActive(false);
 
         PlusPointText.text = "" + PlusPoint;
         LosePointText.text = "" + LosePoint;
@@ -74,11 +77,14 @@ public class StopcountTimer : MonoBehaviour
             }
             SceneManager.LoadScene(NextScene);
         }
-
         Slider.value = CalculateSliderValue();
 
         if (TimeRemaining > 0){
             TimeRemaining -= Time.deltaTime;
+            // Verifica que si pasaron medio segundo, debe desaparecer el mensaje
+            if (TimeRemaining < (TimerMax - 0.5f)){
+                LabelContainer.SetActive(false);
+            }
         } else {
             CheckPoint("None");
             UpdateColorText();
@@ -95,14 +101,19 @@ public class StopcountTimer : MonoBehaviour
         recordActivity.Stage = "" + stageScene;
 
         if (ColorSelected == RandomColor.Item2){
+            WinFailText.text = "+1";
+            WinFailText.color = Color.green;
             PlusPoint++;
             PlusPointText.text = "" + PlusPoint;
             recordActivity.Status = "Ok";
         } else {
+            WinFailText.text = "-1";
+            WinFailText.color = Color.red;
             LosePoint++;
             LosePointText.text = "" + LosePoint;
             recordActivity.Status = "Fail";
         }
+        LabelContainer.SetActive(true);
         recordActivity.Text = RandomText.Item2;
         recordActivity.Ink = RandomColor.Item2;
         recordActivity.Selected = ColorSelected;
