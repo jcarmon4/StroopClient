@@ -1558,7 +1558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CountdownText: {fileID: 1323872535}
-  NextScene: ResultCoherentScene
+  NextScene: ResultScene
   ColorText: {fileID: 2122206639}
   PlusPointText: {fileID: 767150419}
   LosePointText: {fileID: 269841924}

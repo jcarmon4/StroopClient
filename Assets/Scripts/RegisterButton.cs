@@ -53,8 +53,8 @@ public class RegisterButton : MonoBehaviour
 
             if (request.isNetworkError || request.isHttpError)
             {
-                Message.text = "ERROR "+ request.downloadHandler.text;
                 Debug.Log(request.error);
+                Message.text = "ERROR "+ request.error;
             }
             else
             {
