@@ -404,7 +404,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Resultados fase coherente
+  m_Text: Fase cogruente
 --- !u!222 &708446913
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1310,7 +1310,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Resultados fase incoherente
+  m_Text: Fase incongruente
 --- !u!222 &1663312324
 CanvasRenderer:
   m_ObjectHideFlags: 0

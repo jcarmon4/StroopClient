@@ -60,6 +60,12 @@ public class RegisterButton : MonoBehaviour
             {
                 Message.text = "Usuario registrado";
                 Debug.Log("Usuario registrado");
+
+                PlayerPrefs.SetInt("PlusPoint1", 0);
+                PlayerPrefs.SetInt("LosePoint1", 0);
+                PlayerPrefs.SetInt("PlusPoint2", 0);
+                PlayerPrefs.SetInt("LosePoint2", 0);
+                
                 string response = request.downloadHandler.text;
                 Debug.Log(response);
                 User User = JsonUtility.FromJson<User>(response);

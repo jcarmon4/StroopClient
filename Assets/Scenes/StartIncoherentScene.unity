@@ -283,7 +283,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Fase Incoherente '
+  m_Text: 'Fase Incongruente '
 --- !u!222 &527756530
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -493,7 +493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5bbd2b3bc208349abd71d749439ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextScene: SampleScene
+  NextScene: IncoherentScene
 --- !u!114 &1388985096
 MonoBehaviour:
   m_ObjectHideFlags: 0
