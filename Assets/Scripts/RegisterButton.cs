@@ -15,10 +15,12 @@ public class RegisterButton : MonoBehaviour
     public Dropdown Gender;
     public Text Age;
     public Text Message;
+    public GameObject Loading;
 
     // Start is called before the first frame update
     void Start()
     {
+        Loading.SetActive(false);
     }
 
     // Update is called once per frame
@@ -27,6 +29,8 @@ public class RegisterButton : MonoBehaviour
     }
 
     public void OnClick(){
+        Loading.SetActive(true);
+        GetComponent<Button>().interactable = false;
         User user = new User();
         user.fullName = FullName.text;
         user.email = Email.text;
@@ -74,6 +78,8 @@ public class RegisterButton : MonoBehaviour
                 PlayerPrefs.SetString("fullName", User.fullName);
                 SceneManager.LoadScene(NextScene);
             }
+            Loading.SetActive(false);
+            GetComponent<Button>().interactable = true;
         }
     }
 }
