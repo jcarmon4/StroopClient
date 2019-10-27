@@ -19,12 +19,19 @@ public class StartView : MonoBehaviour
     }
 
     public void OnClick(){
+        Debug.Log("OnClick");
         if (NextScene == "SampleScene") {
             PlayerPrefs.SetInt("PlusPoint1", 0);
             PlayerPrefs.SetInt("LosePoint1", 0);
         } else if (NextScene == "IncoherentScene") {
             PlayerPrefs.SetInt("PlusPoint2", 0);
             PlayerPrefs.SetInt("LosePoint2", 0);
+        } else if (NextScene == "CongruentTrainingScene") {
+            PlayerPrefs.SetInt("PlusPointTraining1", 0);
+            PlayerPrefs.SetInt("LosePointTraining1", 0);
+        } else if (NextScene == "IncongruentTrainingScene") {
+            PlayerPrefs.SetInt("PlusPointTraining2", 0);
+            PlayerPrefs.SetInt("LosePointTraining2", 0);
         }
         SceneManager.LoadScene(NextScene);
     }

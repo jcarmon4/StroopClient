@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartIncoherentScene.unity
     guid: e73ae348357319d46b93641433395714
+  - enabled: 1
+    path: Assets/Scenes/IncongruentTutorialScene.unity
+    guid: 7626235ecc353ef4089efb485ff60abf
+  - enabled: 1
+    path: Assets/Scenes/IncongruentTrainingScene.unity
+    guid: d4d4fce9b2d146f4282a68a31531b1ba
+  - enabled: 1
+    path: Assets/Scenes/CongruentTutorialScene.unity
+    guid: 074065e5017855e4394577ac5b8c70f9
   m_configObjects: {}

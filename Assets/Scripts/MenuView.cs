@@ -26,6 +26,10 @@ public class MenuView : MonoBehaviour
         
     }
 
+    public void OnClick(){
+        SceneManager.LoadScene(NextScene);
+    }
+
     public void OnClickRegister(){
         SceneManager.LoadScene(NextScene);
     }
