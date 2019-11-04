@@ -592,7 +592,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Debes seleccionar el color del texto.
+  m_Text: Selecciona el color del texto.
 --- !u!222 &1054869910
 CanvasRenderer:
   m_ObjectHideFlags: 0

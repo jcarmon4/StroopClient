@@ -366,8 +366,8 @@ RectTransform:
   - {fileID: 1646675512}
   - {fileID: 659841232}
   - {fileID: 1724723837}
-  - {fileID: 776699018}
   - {fileID: 1572408909}
+  - {fileID: 776699018}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -904,7 +904,7 @@ RectTransform:
   - {fileID: 1020878611}
   - {fileID: 1978120863}
   m_Father: {fileID: 390044991}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2098,7 +2098,7 @@ RectTransform:
   m_Children:
   - {fileID: 991149744}
   m_Father: {fileID: 390044991}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2114,10 +2114,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1572408908}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e5bbd2b3bc208349abd71d749439ad7, type: 3}
+  m_Script: {fileID: 11500000, guid: a4c8181b1756cdf48916db3687abd267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextScene: SampleScene
+  NextScene: MenuScene
+  FullName: {fileID: 1897564839}
+  Email: {fileID: 988049151}
+  Gender: {fileID: 1062836412}
+  Age: {fileID: 1785950024}
+  Message: {fileID: 659841233}
+  Loading: {fileID: 776699017}
 --- !u!114 &1572408911
 MonoBehaviour:
   m_ObjectHideFlags: 0

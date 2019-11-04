@@ -14,7 +14,7 @@ public class MenuView : MonoBehaviour
     {
         string fullName = PlayerPrefs.GetString("fullName");
         if (fullName != ""){
-            FullNameText.text = fullName;
+            FullNameText.text = "Bienvenido," + fullName;
         } else {
             FullNameText.text = "Bienvenido, registrate!";
         }

@@ -1872,7 +1872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageScene: 1
   CountdownText: {fileID: 1645804160}
-  NextScene: IncongruentTutorialScene
+  NextScene: ResultTrainingScene
   ColorText: {fileID: 1308149200}
   PlusPointText: {fileID: 739734604}
   LosePointText: {fileID: 492765963}

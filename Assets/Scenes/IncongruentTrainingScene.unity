@@ -377,7 +377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageScene: 2
   CountdownText: {fileID: 225072851}
-  NextScene: ResultTrainingScene
+  NextScene: CongruentTutorialScene
   ColorText: {fileID: 1600737649}
   PlusPointText: {fileID: 1067090530}
   LosePointText: {fileID: 73075434}
