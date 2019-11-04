@@ -40,6 +40,10 @@ public class RegisterButton : MonoBehaviour
         CreateUser(user);
     }
 
+    public void OnBackClick(){
+        SceneManager.LoadScene("MenuScene");
+    }
+
     public void CreateUser(User user){
         StartCoroutine(PostRequest(user));
     }

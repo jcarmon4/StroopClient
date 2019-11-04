@@ -35,4 +35,8 @@ public class StartView : MonoBehaviour
         }
         SceneManager.LoadScene(NextScene);
     }
+
+    public void OnBackClick(){
+        SceneManager.LoadScene("MenuScene");
+    }
 }

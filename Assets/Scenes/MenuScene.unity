@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80bb3270f0a687e4791c69958bd65b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextScene: IncongruentTutorialScene
+  NextScene: CongruentTutorialScene
   FullNameText: {fileID: 1192657556}
 --- !u!1 &28946588
 GameObject:
@@ -715,7 +715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80bb3270f0a687e4791c69958bd65b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextScene: StartScene
+  NextScene: CoherentTutorialScen
   FullNameText: {fileID: 1192657556}
 --- !u!1 &784937676
 GameObject:
@@ -1389,7 +1389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80bb3270f0a687e4791c69958bd65b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextScene: StartIncoherentScene
+  NextScene: IncoherentTutorialScene
   FullNameText: {fileID: 1192657556}
 --- !u!1 &1778459013
 GameObject:

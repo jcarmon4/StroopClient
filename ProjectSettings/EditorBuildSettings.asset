@@ -38,4 +38,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CongruentTutorialScene.unity
     guid: 074065e5017855e4394577ac5b8c70f9
+  - enabled: 1
+    path: Assets/Scenes/ResultTrainingScene.unity
+    guid: de19748a1d44f074b918d90521c98b91
+  - enabled: 1
+    path: Assets/Scenes/CongruentTrainingScene.unity
+    guid: 2d01b00a0f927264f82003d09d30615b
+  - enabled: 1
+    path: Assets/Scenes/CoherentTutorialScen.unity
+    guid: 21d7e20d132ae764d84bf1f135a44ed3
+  - enabled: 1
+    path: Assets/Scenes/IncoherentTutorialScene.unity
+    guid: 75a6884e848fd744ea2dd2166d8d4fd0
   m_configObjects: {}
