@@ -28,7 +28,7 @@ public class StopcountTimer : MonoBehaviour
     (Color.black, "negro"), (Color.magenta, "fucsia"), (Color.yellow, "amarillo")};
 
     float CurrentTime = 0f;
-    float StartingTime = 120f;
+    float StartingTime = 300f;
 
     int stageScene = 1;
 
